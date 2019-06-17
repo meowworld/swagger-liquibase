@@ -11,9 +11,10 @@ swagger 和 liquibase的gradle中集成
 
 配置类
 @EnableSwagger2	
-@Configuration{
+@Configuration
+SwaggerConfig{
 	
-	1.最基本的配置
+1.最基本的配置
 	
 	  @Bean
     public Docket docket(){
@@ -102,6 +103,6 @@ swagger 和 liquibase的gradle中集成
         return new Docket(DocumentationType.SWAGGER_2)
                 .globalOperationParameters(list);
 
-
+}
 
 
