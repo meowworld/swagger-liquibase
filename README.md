@@ -1,7 +1,7 @@
 # swagger-liquibase
 swagger 和 liquibase的gradle中集成
 
-随便写了一点，后面再修改吧
+最后面是一个工程zip包,本地没有git，只能上传zip
 
 依赖：
 	
