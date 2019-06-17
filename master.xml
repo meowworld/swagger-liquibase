@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="classpath:/db/changelog/V1.1__init.sql" relativeToChangelogFile="false"/>
+    <!-- 可以添加多个<include 标签 讲数据分布到不同的文件中 -->
+
+    <!--<preConditions>
+        <dbms type="mysql"/>
+        <runningAs username="root"/>
+    </preConditions>-->
+    
+    <changeSet id="test001" author="meow" dbms="mysql" >
+        <preConditions onFail="WARN">
+            <sqlCheck expectedResult="0">select count(*) from test_user_tab</sqlCheck>
+        </preConditions>
+        <comment>但sql查询个数为0时，删除旧的表</comment>
+        <dropTable tableName="test_user_tab"/>
+    </changeSet>
+
+
+
+
+
+</databaseChangeLog>
